@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disappearing Message</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .message {
+            padding: 10px;
+            background-color: lightblue;
+            display: inline-block;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        // Create the message element
+        let message = document.createElement("div");
+        message.className = "message";
+        message.textContent = "This message will disappear in 5 seconds!";
+        
+        // Add it to the page
+        document.body.appendChild(message);
+
+        // Remove the message after 5 seconds
+        setTimeout(() => {
+            message.remove();
+        }, 5000);
+    </script>
+
+</body>
+</html>
