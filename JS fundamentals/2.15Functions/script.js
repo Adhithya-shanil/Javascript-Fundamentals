@@ -11,9 +11,10 @@
 // }
 
 //task4
-// function power(a,n){
-//   return a**n
-// }
-// 
+function power(a,n){
+    return a**n
+}
+
+alert(power(3,4))
 
 
