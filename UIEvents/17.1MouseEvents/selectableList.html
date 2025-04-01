@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>Document</title>
+  <style>
+    .selected {
+      background-color: rgb(20, 171, 12);
+    }
+  </style>
+</head>
+<body class="text-lg">
+  <p>Click on a list item to select it.</p>
+  <ul class="list-disc pl-5">  
+    <li>Christopher Robin</li>
+    <li>Winnie-the-Pooh</li>
+    <li>Tigger</li>
+    <li>Kanga</li>
+    <li>Rabbit. Just rabbit.</li>
+  </ul>
+
+  <script>
+    let selectedItem = null; 
+    document.querySelectorAll("ul li").forEach(li => {
+        li.addEventListener("click", function() {
+            if (selectedItem) {
+                selectedItem.classList.remove("selected");
+            }
+            event.target.classList.add("selected");
+            selectedItem = event.target;
+        });
+    });
+  </script>
+</body>
+</html>
