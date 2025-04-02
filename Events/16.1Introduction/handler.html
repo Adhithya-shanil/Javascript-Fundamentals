@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">CLick me</button>
+</body>
+<script>
+    const button= document.getElementById('btn')
+    button.addEventListener("click", () => alert("1"));
+
+    button.removeEventListener("click", () => alert("1"));
+
+    button.onclick = () => alert(2);                                                                                                            
+</script>
+</html>
+<!-- The browser first alerts 1 then alerts 2, addEventListener and onclick are separate; 
+ onclick does not remove addEventListener handlers. -->
