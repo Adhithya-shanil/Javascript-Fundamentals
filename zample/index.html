@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="flex justify-center items-center h-screen ">
+        <h1 class="flex gap-2 border-2 border-black rounded-[50px] p-5 cursor-pointer">Change to dark mode <img class="w-5 invert" src="dark.svg" alt=""></h1>
+    </div>
+    <script>
+        const button = document.querySelector("h1");
+        const body = document.querySelector("body");
+        let isDark = false;
+        function changeTheme(){
+            if(isDark){
+                body.style.background = 'white';
+                button.style.color = 'black';
+                button.style.borderColor = 'black';
+                button.innerHTML = 'Change to dark mode <img class="w-5 invert" src="dark.svg" alt="dark mode icon">';
+            }
+            else{
+                body.style.background = 'black';
+                button.style.color = 'white';
+                button.style.borderColor = 'white';
+                button.innerHTML = 'Change to light mode <img class="w-5" src="light.svg" alt="light mode icon">';
+            }
+           
+
+            isDark=!isDark;
+        }
+        
+        button.addEventListener('click', changeTheme);
+    </script>
+</body>
+</html>
