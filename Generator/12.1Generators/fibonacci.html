@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function* fibonacci(n){
+            let i=0;
+            let j=1;
+            let k=0;
+            while(k<n){
+                if(i%2==0){
+                    yield i;
+                }
+                [i, j] = [j, i + j];
+                k++;
+            }
+        }
+        let n = +prompt("Enter the size of the series: ");
+        let fibo = fibonacci(n);
+
+        for(const i of fibo){
+            alert(i);
+        }
+
+    </script>
+</body>
+</html>

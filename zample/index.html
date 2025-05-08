@@ -1,38 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
+  
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Document</title>
-</head>
-<body>
-    <div class="flex justify-center items-center h-screen ">
-        <h1 class="flex gap-2 border-2 border-black rounded-[50px] p-5 cursor-pointer">Change to dark mode <img class="w-5 invert" src="dark.svg" alt=""></h1>
-    </div>
+    <style>
+      #getData {
+          width: 250px;
+          height: 200px;
+          padding: 10px;
+          border: 1px solid #4f4d4d;
+      }
+    </style>
     <script>
-        const button = document.querySelector("h1");
-        const body = document.querySelector("body");
-        let isDark = false;
-        function changeTheme(){
-            if(isDark){
-                body.style.background = 'white';
-                button.style.color = 'black';
-                button.style.borderColor = 'black';
-                button.innerHTML = 'Change to dark mode <img class="w-5 invert" src="dark.svg" alt="dark mode icon">';
-            }
-            else{
-                body.style.background = 'black';
-                button.style.color = 'white';
-                button.style.borderColor = 'white';
-                button.innerHTML = 'Change to light mode <img class="w-5" src="light.svg" alt="light mode icon">';
-            }
-           
+      function allowDrop(even) {
+          even.preventDefault();
+      }
 
-            isDark=!isDark;
-        }
-        
-        button.addEventListener('click', changeTheme);
+      function drag(even) {
+          even.dataTransfer.setData("text", even.target.id);
+      }
+
+      function drop(even) {
+          even.preventDefault();
+          var fetchData = even.dataTransfer.getData("text");
+          even.target.appendChild(document.getElementById(fetchData));
+      }
     </script>
+</head>
+
+<body>
+    <h3>Drag the GeekforGeeks image into the rectangle:</h3>
+    <div id="getData" 
+         ondrop="drop(event)" 
+         ondragover="allowDrop(event)">
+      </div>
+    <br> 
+    <img id="dragData" 
+         src="gfg.png" 
+         draggable="true" 
+         ondragstart="drag(event)" 
+         width="250" 
+         height="200"
+         background-color="red"> 
 </body>
+  
 </html>
