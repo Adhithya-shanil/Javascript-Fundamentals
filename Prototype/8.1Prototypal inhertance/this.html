@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let animal = {
+        eat() {
+            this.full = true;
+        }
+        };
+
+        let rabbit = {
+        __proto__: animal
+        };
+
+        rabbit.eat();
+    </script>
+</body>
+</html>
+<!-- The this refers to the rabbit here, its rabbit.eat.this, so here the this refers to the rabbit -->

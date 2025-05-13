@@ -1,0 +1,107 @@
+.smart-selector-highlight {
+    background-color: #FF8C00 !important;
+    color: inherit;
+  }
+  
+  .smart-selector-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    max-width: 600px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    z-index: 2147483647;
+    padding: 20px;
+    display: none;
+    border: 2px solid #FF8C00;
+  }
+  
+  .smart-selector-popup-header {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .smart-selector-selected-text {
+    background-color: #FFF0E0;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    max-height: 100px;
+    overflow-y: auto;
+    font-size: 14px;
+    border: 1px solid #FFD9B3;
+  }
+  
+  .smart-selector-prompt-container {
+    margin-bottom: 15px;
+  }
+  
+  .smart-selector-prompt-input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    resize: vertical;
+    min-height: 60px;
+    font-family: inherit;
+  }
+  
+  .smart-selector-popup-footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .smart-selector-submit-button {
+    background-color: #FF8C00;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .smart-selector-submit-button:hover {
+    background-color: #E67E00;
+  }
+  
+  .smart-selector-response-container {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    display: none;
+  }
+  
+  .smart-selector-loading {
+    text-align: center;
+    margin: 15px 0;
+    display: none;
+  }
+  
+  .smart-selector-loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 140, 0, 0.3);
+    border-radius: 50%;
+    border-top-color: #FF8C00;
+    animation: spin 1s ease-in-out infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }

@@ -6,16 +6,18 @@
   <title>Document</title>
 </head>
 <body>
+  <div id="elem1"></div>
+  <div id="elem2"></div>
+  <div id="elem3"></div>
+
   <script>
-        function* generateSequence() {
-      yield 1;
-      yield 2;
-      yield 3;
-    }
-    
-    let sequence = [0, ...generateSequence()];
-    
-    alert(sequence); 
+    let elem = document.getElementById('elem');
+    let text ='<span>text</span>';
+
+    elem1.append(document.createTextNode(text))
+    elem2.innerHTML = text
+    elem3.textContent = text
+
   </script>
 </body>
 </html>
