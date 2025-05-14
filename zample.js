@@ -1,8 +1,2 @@
-let formData = new FormData();
-formData.append('key1', 'value1');
-formData.append('key2', 'value2');
-
-// List key/value pairs
-for(let [name, value] of formData) {
-  console.log(`${name} = ${value}`); // key1 = value1, then key2 = value2
-}
+let d = new Date(2023, 0);  // January 1, 2023
+console.log(d.toLocaleString());  
