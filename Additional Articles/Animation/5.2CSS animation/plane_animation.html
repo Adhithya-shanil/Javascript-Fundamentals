@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #plane{
+            width: 40px;
+            height: 24px;
+            transition: all 3s;
+        }
+        #plane.growing{
+            width: 400px;
+            height: 240px;
+        }
+    </style>
+</head>
+<body>
+    
+    <img id="plane" title="plane" src="https://en.js.cx/clipart/flyjet.jpg" alt="plane">
+    <script>
+        const plane = document.getElementById('plane');
+        let ended = false;
+        plane.onclick=function(){
+        
+            plane.addEventListener('transitionend',function(){
+                if(!ended){
+                    ended = true;
+                    alert("Done");
+                }
+                
+            });
+            plane.classList.add('growing');
+        }
+    </script>
+</body>
+</html>
