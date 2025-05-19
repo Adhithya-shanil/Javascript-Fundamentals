@@ -6,11 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    <pre><code>
-        function greet(name) {
-          console.log("Hello, " + name);
+    <script>
+        Function.prototype.defer = function(ms) {
+            setTimeout(this, ms);
+        };
+
+        function f() {
+            alert("Hello!");
         }
-        greet("Alice");
-        </code></pre>
+
+        f.defer(1000);
+    </script>
 </body>
 </html>

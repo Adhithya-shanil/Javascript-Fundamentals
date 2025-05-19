@@ -8,17 +8,16 @@
 <body>
     <script>
         let animal = {
-        eat() {
-            this.full = true;
-        }
+            eat() {
+                this.full = true;
+            }
         };
 
         let rabbit = {
-        __proto__: animal
+            __proto__: animal
         };
 
-        rabbit.eat();
+        alert( rabbit.eat() ); //rabbit
     </script>
 </body>
 </html>
-<!-- The this refers to the rabbit here, its rabbit.eat.this, so here the this refers to the rabbit -->

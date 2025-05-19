@@ -6,11 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <pre><code>
-        function greet(name) {
-          console.log("Hello, " + name);
+    <script>
+        function delay(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
         }
-        greet("Alice");
-        </code></pre>
+
+        delay(3000).then(() => alert('runs after 3 seconds'));
+    </script>
 </body>
 </html>

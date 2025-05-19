@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function preloadImages(sources, callback) {
+            let counter = 0;
+            function onload() {
+                counter++;
+                if (counter == sources.length) {
+                    callback();
+                }
+            }
+
+            for (let source of sources) {
+                let img = document.createElement('img');
+                img.onload = img.onerror = onload;
+                img.src = source;
+            }
+        }
+
+        let sources = [
+            "https://en.js.cx/images-load/1.jpg",
+            "https://en.js.cx/images-load/2.jpg",
+            "https://en.js.cx/images-load/3.jpg"
+        ];
+
+        for (let i = 0; i < sources.length; i++) {
+            sources[i] += '?' + Math.random();
+        }
+
+        function testLoaded() {
+            let widthSum = 0;
+            let loadedImages = 0;
+
+            for (let i = 0; i < sources.length; i++) {
+                let img = document.createElement('img');
+                img.src = sources[i];
+                img.onload = function () {
+                    widthSum += img.width;
+                    loadedImages++;
+
+                    if (loadedImages === sources.length) {
+                        alert(widthSum);
+                    }
+                };
+            }
+        }
+
+        preloadImages(sources, testLoaded);
+    </script>
+</body>
+</html>
